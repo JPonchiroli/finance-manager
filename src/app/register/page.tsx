@@ -4,13 +4,13 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
 import { getFirestore, doc, setDoc } from "firebase/firestore";
-import { app } from "@/firebaseConfig";
+import { app, auth } from "@/firebaseConfig";
 import toast, { Toaster } from "react-hot-toast";
 import Link from "next/link";
+import { Github, Google } from "@deemlol/next-icons";
 
 export default function RegisterPage() {
   const router = useRouter();
-  const auth = getAuth(app);
   const db = getFirestore(app);
 
   const [form, setForm] = useState({ name: "", email: "", cpf: "", password: "" });
@@ -151,17 +151,21 @@ export default function RegisterPage() {
           <div className="mt-6 grid grid-cols-2 gap-3">
             <button
               onClick={() => toast("Google login placeholder")}
-              className="w-full inline-flex justify-center py-3 px-4 border border-gray-300 rounded-xl shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 transition"
+              className="w-full inline-flex items-center justify-center py-3 px-4 border border-gray-300 rounded-xl shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 hover:cursor-pointer transition gap-2"
             >
-              Google
+              <Google size={24} color="#364153" />
+              <span>Google</span>
             </button>
+
             <button
               onClick={() => toast("GitHub login placeholder")}
-              className="w-full inline-flex justify-center py-3 px-4 border border-gray-300 rounded-xl shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 transition"
+              className="w-full inline-flex items-center justify-center py-3 px-4 border border-gray-300 rounded-xl shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 hover:cursor-pointer transition gap-2"
             >
-              GitHub
+              <Github size={24} color="#364153" />
+              <span>GitHub</span>
             </button>
           </div>
+
         </div>
 
         <div className="mt-8 text-center">
