@@ -144,6 +144,7 @@ export default function DashboardPage() {
     <div className="min-h-screen bg-gray-100 p-4 sm:p-6 lg:p-8">
       <div className="max-w-7xl mx-auto">
         {/* Cabeçalho */}
+        
         <header className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-8">
           <div>
             <h1 className="text-3xl font-bold text-gray-800">Meu Dashboard</h1>
@@ -152,7 +153,7 @@ export default function DashboardPage() {
           <div className="flex space-x-30">
             <Link href={'despesas'} className="text-gray-800 text-lg font-bold hover:underline hover:decoration-2">Despesas</Link>
             <Link href={'receitas'} className="text-gray-800 text-lg font-bold hover:underline hover:decoration-2">Receitas</Link>
-            <Link href={'#'} className="text-gray-800 text-lg font-bold hover:underline hover:decoration-2">Transações</Link>
+            <Link href={'transacoes'} className="text-gray-800 text-lg font-bold hover:underline hover:decoration-2">Transações</Link>
           </div>
           <button
             onClick={handleLogout}
@@ -239,7 +240,7 @@ export default function DashboardPage() {
                         data={expenseDistribution}
                         cx="50%" cy="50%" outerRadius={100}
                         dataKey="value" nameKey="name"
-                        label={({ name, value }) => `${name}: R$ ${value.toFixed(2)}`}
+                        label={({ name, value }) => `${name}: R$ ${(value as number).toFixed(2)}`}
                       >
                         {expenseDistribution.map((entry, index) => (
                           <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
