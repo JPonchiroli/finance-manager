@@ -7,6 +7,7 @@ import { collection, addDoc } from "firebase/firestore";
 import { app, auth, db } from "@/firebaseConfig";
 import toast, { Toaster } from "react-hot-toast";
 import Link from "next/link";
+import Header from "@/components/header/header";
 
 export default function NewExpensePage() {
     const router = useRouter();
@@ -118,24 +119,7 @@ export default function NewExpensePage() {
             <div className="max-w-7xl mx-auto">
                 {/* Cabeçalho */}
 
-                <header className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-8">
-                    <div>
-                        <h1 className="text-3xl font-bold text-gray-800">Minhas Despesas</h1>
-                        <p className="text-gray-600">Bem-vindo(a) de volta, {user.displayName || user.email}!</p>
-                    </div>
-                    <div className="flex space-x-30">
-                        <Link href={'dashboard'} className="text-gray-800 text-lg font-bold hover:underline hover:decoration-2">Dashboard</Link>
-                        <Link href={'despesas'} className="text-gray-800 text-lg font-bold hover:underline hover:decoration-2">Despesas</Link>
-                        <Link href={'receitas'} className="text-gray-800 text-lg font-bold hover:underline hover:decoration-2">Receitas</Link>
-                        <Link href={'transacoes'} className="text-gray-800 text-lg font-bold hover:underline hover:decoration-2">Transações</Link>
-                    </div>
-                    <button
-                        onClick={handleLogout}
-                        className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300"
-                    >
-                        Sair
-                    </button>
-                </header>
+                <Header title="MInhas Despesas" />
 
                 <main className="w-2/4 mx-auto rounded-2xl bg-gray-50 py-8 px-4 sm:px-6">
                     <Toaster position="top-center" />

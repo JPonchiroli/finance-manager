@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 import { FaArrowUp, FaArrowDown, FaDollarSign, FaBell, FaChartLine } from 'react-icons/fa';
 import Link from "next/link";
+import Header from "@/components/header/header";
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884D8', '#82CA9D'];
 
@@ -144,24 +145,8 @@ export default function DashboardPage() {
     <div className="min-h-screen bg-gray-100 p-4 sm:p-6 lg:p-8">
       <div className="max-w-7xl mx-auto">
         {/* Cabeçalho */}
-        
-        <header className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-8">
-          <div>
-            <h1 className="text-3xl font-bold text-gray-800">Meu Dashboard</h1>
-            <p className="text-gray-600">Bem-vindo(a) de volta, {user.displayName || user.email}!</p>
-          </div>
-          <div className="flex space-x-30">
-            <Link href={'despesas'} className="text-gray-800 text-lg font-bold hover:underline hover:decoration-2">Despesas</Link>
-            <Link href={'receitas'} className="text-gray-800 text-lg font-bold hover:underline hover:decoration-2">Receitas</Link>
-            <Link href={'transacoes'} className="text-gray-800 text-lg font-bold hover:underline hover:decoration-2">Transações</Link>
-          </div>
-          <button
-            onClick={handleLogout}
-            className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300"
-          >
-            Sair
-          </button>
-        </header>
+
+        <Header title="Meu Dashboard" />
 
         {/* Conteúdo */}
         <main className="grid grid-cols-1 lg:grid-cols-3 gap-6">
