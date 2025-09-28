@@ -208,7 +208,7 @@ export default function LoginPage() {
               type="button"
               onClick={handleGoogleLogin}
               disabled={isLoading}
-              className="w-full inline-flex justify-center items-center py-3 px-4 border border-gray-300 rounded-xl shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 transition disabled:opacity-50"
+              className="w-full inline-flex justify-center items-center py-3 px-4 border border-gray-300 rounded-xl shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 hover:cursor-pointer transition disabled:opacity-50"
             >
               <Google size={24} color="#364153" />
               <span className="ml-2">Google</span>
@@ -218,7 +218,7 @@ export default function LoginPage() {
               type="button"
               onClick={handleGithubLogin}
               disabled={isLoading}
-              className="w-full inline-flex justify-center items-center py-3 px-4 border border-gray-300 rounded-xl shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 transition disabled:opacity-50"
+              className="w-full inline-flex justify-center items-center py-3 px-4 border border-gray-300 rounded-xl shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 hover:cursor-pointer transition disabled:opacity-50"
             >
               <Github size={24} color="#364153" />
               <span className="ml-2">GitHub</span>
