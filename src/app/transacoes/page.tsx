@@ -229,7 +229,8 @@ export default function TransactionsPage() {
                                                 <td className="px-6 py-4">
                                                     <input
                                                         type="text"
-                                                        value={editForm.description || t.description}
+                                                        value={editForm.description ?? t.description} // <-- aqui
+                                                        onFocus={(e) => e.target.select()}
                                                         onChange={(e) => setEditForm({ ...editForm, description: e.target.value })}
                                                         className="border rounded p-1 w-full text-gray-700"
                                                     />
@@ -237,7 +238,8 @@ export default function TransactionsPage() {
                                                 <td className="px-6 py-4 ">
                                                     <input
                                                         type="text"
-                                                        value={editForm.category || t.category}
+                                                        value={editForm.category ?? t.category} // <-- aqui
+                                                        onFocus={(e) => e.target.select()}
                                                         onChange={(e) => setEditForm({ ...editForm, category: e.target.value })}
                                                         className="border rounded p-1 w-full text-gray-700"
                                                     />
