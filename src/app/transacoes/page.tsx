@@ -254,10 +254,10 @@ export default function TransactionsPage() {
                                                 </td>
                                                 <td className="px-6 py-4">
                                                     <input
-                                                        type="number"
-                                                        step="0.01"
-                                                        value={editForm.amount || t.amount}
-                                                        onChange={(e) => setEditForm({ ...editForm, amount: parseFloat(e.target.value) || 0 })}
+                                                        type="text"
+                                                        value={editForm.amount ?? t.amount} // <-- aqui
+                                                        onFocus={(e) => e.target.select()}
+                                                        onChange={(e) => setEditForm({ ...editForm, amount: e.target.value === "" ? undefined : parseFloat(e.target.value) })}
                                                         className="border rounded p-1 w-full text-gray-700"
                                                     />
                                                 </td>
